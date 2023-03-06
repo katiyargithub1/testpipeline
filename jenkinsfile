@@ -1,11 +1,6 @@
 pipeline {
    agent any
    stages {
-      stage (version){
-         steps {
-	   sh "python3 --version"
-	   }
-      }
       stage('Setup') {
          steps {
            // Create and activate a virtual environment
@@ -13,6 +8,11 @@ pipeline {
            sh 'source env/bin/activate'
            //sh 'pip install -r requirements.txt'
          }
+      }
+      stage (version){
+         steps {
+	   sh "python3 --version"
+	   }
       }
       stage ('Run puthon script'){
 	    steps {
