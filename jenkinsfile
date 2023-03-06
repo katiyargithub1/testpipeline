@@ -1,11 +1,16 @@
 pipeline {
    agent any
    stages {
+      stage (version){
+         steps {
+	   sh "python3 --version"
+	   }
+      }
       stage ('Run puthon script'){
 	    steps {
 		  script {
 		    //Run python script and save output in a file
-			sh "python script1.py"
+			sh "python3 script1.py"
 		  }
 	    }
 	  }
