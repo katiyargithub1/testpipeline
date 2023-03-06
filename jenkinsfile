@@ -1,0 +1,13 @@
+pipeline {
+   agent any
+   stages {
+      stage ('Run puthon script'){
+	    steps {
+		  script {
+		    //Run python script and save output in a file
+			sh "python script1.py"
+		  }
+	    }
+	  }
+    }
+}	
