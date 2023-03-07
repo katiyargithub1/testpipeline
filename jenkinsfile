@@ -17,7 +17,7 @@ pipeline {
 	  stage ('Email') {
 	    steps {
 		  //send an email with scriptoutput
-		  emailext body: "$(scriptoutput)", subject: "script output", to: "amit.cs86@gmail.com"
+		  emailext body: "${scriptoutput}", subject: "script output", to: "amit.cs86@gmail.com"
 		  }
 	  }
 	  
