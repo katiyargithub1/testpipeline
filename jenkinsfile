@@ -9,10 +9,17 @@ pipeline {
       stage ('Run puthon script'){
 	    steps {
 		  script {
-		    //Run python script and save output in a file
-			sh "python3 script1.py"
+		    //Run python script and save output in a variable
+			scriptoutput = sh(script: "python3 script1.py" , returnStdout: true).trim()
 		  }
 	    }
 	  }
+	  stage ('Email') {
+	    steps {
+		  //send an email with scriptoutput
+		  emailext body: "$(scriptoutput)", subject: "script output", to: "amit.cs86@gmail.com"
+		  }
+	  }
+	  
     }
 }	
