@@ -1,6 +1,5 @@
-#! /bin/bash
-
 #### Say hello
 
-echo "Hello Good morning"
+str1 = "Good Morning"
+print (str1)
 
